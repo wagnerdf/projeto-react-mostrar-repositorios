@@ -9,7 +9,9 @@ function App(props) {
     axios.get(`http://api.github.com/users/${usuario}/repos`).then(response => console.log(response.data));  
   }
   return ( 
+    
     <> 
+      <p></p>
       <input className="usuarioInput" placeholder="Usuário" value={usuario} onChange={e => setUsuario(e.target.value) }/>
       <button type="button" onClick={handlePesquisa}>Pesquisar</button>
     </>
