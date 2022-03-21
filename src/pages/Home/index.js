@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import * as S from './styled';
 
 function App(props) {
   const [ usuario, setUsuario ] = useState(''); 
@@ -9,11 +10,11 @@ function App(props) {
   }
   return ( 
     
-    <> 
+    <S.Container> 
       <p></p>
-      <input className="usuarioInput" placeholder="Usuário" value={usuario} onChange={e => setUsuario(e.target.value) }/>
-      <button type="button" onClick={handlePesquisa}>Pesquisar</button>
-    </>
+      <S.Input className="usuarioInput" placeholder="Usuário" value={usuario} onChange={e => setUsuario(e.target.value) }/>
+      <S.Button type="button" onClick={handlePesquisa}>Pesquisar</S.Button>
+    </S.Container>
   );
 }
 export default App;
