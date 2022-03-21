@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import * as S from './styled';
+import { useNavigate } from 'react-router-dom';
+
 
 function App(props) {
+  const navigate = useNavigate();
   const [ usuario, setUsuario ] = useState(''); 
   
   function handlePesquisa(){
@@ -11,9 +14,10 @@ function App(props) {
       const repositoriesName = [];
       repositories.map((repository) => {
         repositoriesName.push(repository.name);
+        return true;
       });
       localStorage.setItem('repositoriesName', JSON.stringify(repositoriesName));
-
+      navigate('/repositories');
     });  
   }
   return ( 
